@@ -1,0 +1,10 @@
+#!/bin/bash
+
+backlight=/sys/class/backlight/intel_backlight/
+
+current_brightness="$(cat "$backlight/brightness")"
+max_brightness="$(cat "$backlight/max_brightness")"
+
+brightness_percentage=$(($(($current_brightness*100))/$max_brightness))
+
+echo "Brightness: $brightness_percentage" && exit

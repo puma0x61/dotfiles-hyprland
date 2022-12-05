@@ -1,0 +1,136 @@
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano-syntax-highlighting/*.nanorc"
+
+## Make 'nextword' (Ctrl+Right) and 'chopwordright' (Ctrl+Delete)
+## stop at word ends instead of at beginnings.
+set afterends
+
+## Automatically indent a newly created line to the same number of
+## tabs and/or spaces as the preceding line -- or as the next line
+## if the preceding line is the beginning of a paragraph.
+set autoindent
+
+## Back up files to the current filename plus a tilde.
+set backup
+
+## The characters treated as closing brackets when justifying paragraphs.
+## This may not include any blank characters.  Only closing punctuation,
+## optionally followed by these closing brackets, can end sentences.
+set brackets ""')>]}"
+
+## Set the target width for automatic hard-wrapping and for justifying
+## paragraphs.  If the specified value is 0 or less, the wrapping point
+## will be the terminal's width minus this number.
+set fill -2
+
+## Draw a vertical stripe at the given column, to help judge text width.
+## (This option does not have a default value.)
+# set guidestripe 80
+
+## Display a "scrollbar" on the righthand side of the edit window.
+# set indicator
+
+## Display line numbers to the left (and any anchors in the margin).
+set linenumbers
+
+## Fall back to slow libmagic to try and determine an applicable syntax.
+# set magic
+
+## The opening and closing brackets that are found by a matching-bracket
+## search.  This may not contain blank characters.  The opening brackets
+## must come before the closing ones, and they must be in the same order.
+set matchbrackets "(<[{)>]}"
+
+## Enable mouse support, if available for your system.  When enabled,
+## mouse clicks can be used to place the cursor, set the mark (with a
+## double click), and execute shortcuts.  The mouse will work in the
+## X Window System, and on the console when gpm is running.
+set mouse
+
+## The characters treated as closing punctuation when justifying paragraphs.
+## This may not contain blank characters.  Only these closing punctuations,
+## optionally followed by closing brackets, can end sentences.
+set punct "!.?"
+
+## Make status-bar messages disappear after 1 keystroke instead of after 20.
+set quickblank
+
+## The regular expression that matches quoting characters in email
+## or line-comment introducers in source code.  The default is:
+set quotestr "^([ 	]*([!#%:;>|}]|//))+"
+
+## Spread overlong lines over multiple screen lines.
+set softwrap
+
+## Use the end of the title bar for some state flags: I = auto-indenting,
+## M = mark, L = hard-wrapping long lines, R = recording, S = soft-wrapping.
+set stateflags
+
+## Use this tab size instead of the default; it must be greater than 0.
+set tabsize 4
+
+## Convert each typed tab to the fitting number of spaces.
+set tabstospaces
+
+## The two single-column characters used to display the first characters
+## of tabs and spaces.  187 in ISO 8859-1 (0000BB in Unicode) and 183 in
+## ISO-8859-1 (0000B7 in Unicode) seem to be good values for these.
+## The default when in a UTF-8 locale:
+set whitespace "»·"
+## The default otherwise:
+set whitespace ">."
+
+## Let an unmodified Backspace or Delete erase the marked region (instead
+## of a single character, and without affecting the cutbuffer).
+set zap
+
+## Paint the interface elements of nano.  These are examples; there are
+## no colors by default, except for errorcolor and spotlightcolor.
+set titlecolor blue
+# set promptcolor lightwhite,grey
+# set statuscolor bold,white,green
+# set errorcolor bold,white,red
+# set spotlightcolor black,lightyellow
+# set selectedcolor lightwhite,magenta
+# set stripecolor ,grey
+# set scrollercolor cyan
+set numbercolor cyan
+set keycolor cyan
+# set functioncolor green
+
+## If <Tab> should always produce an actual TAB when editing a Makefile:
+extendsyntax makefile tabgives "	"
+
+
+## === Key bindings ===
+
+bind ^X cut main
+bind ^C copy main
+bind ^V paste all
+bind ^Q exit all
+bind ^S savefile main
+bind ^W writeout main
+bind ^O insert main
+set multibuffer
+bind ^H help all
+bind ^H exit help
+bind ^F whereis all
+bind ^G findnext all
+bind ^B wherewas all
+bind ^D findprevious all
+bind ^R replace main
+bind ^Z undo main
+bind ^Y redo main
+unbind ^K main
+unbind ^U all
+unbind ^N main
+unbind ^Y all
+unbind M-J main
+unbind M-T main
+bind ^A mark main
+bind ^P location main
+bind ^T gotoline main
+bind ^T gotodir browser
+bind ^T cutrestoffile execute
+bind ^L linter execute
+bind ^E execute main

@@ -1,0 +1,33 @@
+(include "./def/var.yuck")
+(include "./def/poll.yuck")
+
+(defwindow bar
+	:monitor 0
+	:geometry (geometry 
+			:width "100%"
+			:height "4%"
+			:anchor "top center"
+			)
+	:exclusive true	
+
+    (box :class "main_container"
+
+        (button
+            :class "time_battery"
+            :halign "start"
+            "${brightness} - ${volume}"
+        )
+    
+	    (button 
+	        :class "time_battery" 
+	        :halign "center" 
+	        "${time}"
+	    )
+
+	    (button
+	        :class "time_battery"
+	        :halign "end"
+	        "${wifi} - ${battery}"
+	    )
+	)
+)

@@ -1,0 +1,10 @@
+
+theme = "macchina"
+
+show = [
+    "Distribution",
+    "DesktopEnvironment",
+    "Packages",
+    "Terminal",
+    "Shell"
+     ]

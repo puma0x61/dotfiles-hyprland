@@ -1,0 +1,36 @@
+# macchina
+
+hide_ascii = false
+separator = "-"
+key_color = "Cyan"
+
+[palette]
+type = "Dark"
+visible = true
+
+[box]
+visible = false
+
+[randomize]
+key_color = false
+separator_color = false
+
+[keys]
+host            = "Host"
+kernel          = "Kernel"
+battery         = "Battery"
+os              = "OS"
+de              = "Compositor"
+wm              = "WM"
+distro          = "Distro"
+terminal        = "Terminal"
+shell           = "Shell"
+packages        = "Packages"
+uptime          = "Uptime"
+memory          = "Memory"
+machine         = "Machine"
+local_ip        = "Local IP"
+backlight       = "Brightness"
+resolution      = "Resolution"
+cpu_load        = "CPU Load"
+cpu             = "CPU"

@@ -1,0 +1,14 @@
+(defpoll time :interval "20s"
+	`date +" %a %b %d %H:%M"`)
+
+(defpoll battery :interval "1m"
+	`/home/$USER/.config/eww/scripts/battery`)
+
+(defpoll wifi :interval "3s"
+        `/home/$USER/.config/eww/scripts/wifi`)
+
+(defpoll brightness :interval "1s"
+    `/home/$USER/.config/eww/scripts/brightness`)
+
+(defpoll volume :interval "1s"
+    `/home/$USER/.config/eww/scripts/volume`)
