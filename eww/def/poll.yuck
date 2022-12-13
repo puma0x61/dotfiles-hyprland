@@ -7,8 +7,14 @@
 (defpoll wifi :interval "3s"
         `/home/$USER/.config/eww/scripts/wifi`)
 
+(defpoll eth :interval "3s"
+        `/home/$USER/.config/eww/scripts/ethernet`)
+
 (defpoll brightness :interval "1s"
     `/home/$USER/.config/eww/scripts/brightness`)
 
 (defpoll volume :interval "1s"
     `/home/$USER/.config/eww/scripts/volume`)
+
+(defpoll mic :interval "1s"
+    `/home/$USER/.config/eww/scripts/mic-volume`)

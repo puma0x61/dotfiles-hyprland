@@ -8,3 +8,5 @@ export XCURSOR_SIZE=20
 export XCURSOR_THEME=Breeze_Default
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
+wrappedhl

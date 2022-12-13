@@ -13,21 +13,21 @@
     (box :class "main_container"
 
         (button
-            :class "time_battery"
+            :class "main_theme"
             :halign "start"
-            "${brightness} - ${volume}"
+            "${brightness} - ${volume} - ${mic}"
         )
     
 	    (button 
-	        :class "time_battery" 
+	        :class "main_theme" 
 	        :halign "center" 
 	        "${time}"
 	    )
 
 	    (button
-	        :class "time_battery"
+	        :class "main_theme"
 	        :halign "end"
-	        "${wifi} - ${battery}"
+	        "${eth} - ${wifi} - ${battery}"
 	    )
 	)
 )

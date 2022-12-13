@@ -1,0 +1,5 @@
+#!/bin/bash
+
+status="$(cat "/sys/class/net/enp0s31f6/operstate")"
+
+echo "Ethernet: $status" && exit

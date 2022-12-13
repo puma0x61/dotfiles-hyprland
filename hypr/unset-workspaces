@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sleep 3
+
+hyprctl keyword windowrule "workspace unset, Alacritty"
+hyprctl keyword windowrule "workspace unset, Vivaldi"
+hyprctl keyword windowrule "workspace unset, telegram"
