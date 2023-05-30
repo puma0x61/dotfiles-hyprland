@@ -1,0 +1,9 @@
+sort=-time
+font=Hack 12
+background-color=#00000099
+text-color=#aaaaaaff
+border-color=#595959aa
+border-radius=7
+width=307
+default-timeout=5000
+ignore-timeout=1
