@@ -9,9 +9,18 @@ per0="$(cat "$bat0/capacity")"
 per1="$(cat "$bat1/capacity")"
 
 per=$(($(($per0+$per1))/2))
+status_show=""
+
+if [[ $status -eq 1 ]]; then
+    status_show="⇑"
+elif [[ $status -eq 0 ]]; then
+    status_show="⇓"
+else
+    status_show"❔"
+fi
 
 if [[ $per -lt 11 && $status -eq 0 ]]; then
     brightnessctl -q s 152
 fi
 
-echo "Battery: $per" && exit
+echo "$per$status_show" && exit

@@ -5,29 +5,117 @@
 	:monitor 0
 	:geometry (geometry 
 			:width "100%"
-			:height "4%"
+			:height "3%"
 			:anchor "top center"
 			)
-	:exclusive true	
+	:exclusive true
 
-    (box :class "main_container"
+  (box :class "main_container"
 
-        (button
-            :class "main_theme"
-            :halign "start"
-            "${brightness} - ${volume} - ${mic}"
-        )
-    
-	    (button 
-	        :class "main_theme" 
-	        :halign "center" 
-	        "${time}"
-	    )
+    (button
+        :class "main_theme"
+        :halign "start"
+        "${brightness} ${sep} ${volume} ${sep} ${mic} ${sep} ${workspaces} ${sep} ${round(((EWW_RAM.used_mem) / 1048576), 0)}/${round(((EWW_RAM.total_mem) / 1048576), 0)}"
+    )
+  
+    (button 
+        :class "main_theme" 
+        :halign "center" 
+        "${date} ${sep} ${time}"
+    )
+ 
+    (button
+        :class "main_theme"
+        :halign "end"
+        "${round(EWW_CPU.avg, 0)}% ${sep} ${temp}K ${sep} ${eth} ${sep} ${wifi} ${sep} Battery: ${battery}"
+    )
+  )
+)
 
-	    (button
-	        :class "main_theme"
-	        :halign "end"
-	        "${eth} - ${wifi} - ${battery}"
-	    )
-	)
+(defwindow bar2
+  :monitor 0
+  :geometry (geometry 
+			:width "100%"
+			:height "3%"
+			:anchor "bottom center"
+			)
+	:exclusive true
+  (top_bar)
+)
+
+(defwidget top_bar []
+  (box
+    :class "main_container"
+    (box
+      :spacing 0
+      :space-evenly: true
+      :class "main_theme"
+      :halign "left"
+      (_brightness)
+      (vol)
+      (_mic)
+      (workspace)
+      (mem)
+    )
+    (box
+      :class "main_theme"
+      :halign "center"
+      (cal)
+    )
+    (box
+      :class "main_theme"
+      :halign "right"
+      (cpu)
+      (temperature)
+    )
+  )
+)
+
+(defwidget cal []
+  (box
+    :halign "center"
+    "${date} ${sep} ${time}"
+  )
+)
+
+(defwidget mem []
+  (box
+    "${round(((EWW_RAM.used_mem) / 1048576), 0)}/${round(((EWW_RAM.total_mem) / 1048576), 0)}"
+  )
+)
+
+(defwidget cpu []
+  (box
+    "${round(EWW_CPU.avg, 0)}%"
+  )
+)
+
+(defwidget _brightness []
+  (box
+    brightness
+  )
+)
+
+(defwidget vol []
+  (box
+    volume
+  )
+)
+
+(defwidget _mic []
+  (box
+    mic
+  )
+)
+
+(defwidget workspace []
+  (box
+    workspaces
+  )
+)
+
+(defwidget temperature []
+  (box
+    temp
+  )
 )

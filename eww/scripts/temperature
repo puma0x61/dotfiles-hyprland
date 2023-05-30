@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sensor=/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon6
+
+temp="$(cat "$sensor/temp1_input")"
+hrtemp=$(($((temp/1000))+273))
+
+echo "$hrtemp" && exit

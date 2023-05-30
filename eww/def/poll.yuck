@@ -1,5 +1,8 @@
+(defpoll date :interval "20s"
+	`date +" %a %b %d"`)
+
 (defpoll time :interval "20s"
-	`date +" %a %b %d %H:%M"`)
+	`date +"%H:%M"`)
 
 (defpoll battery :interval "1m"
 	`/home/$USER/.config/eww/scripts/battery`)
@@ -18,3 +21,10 @@
 
 (defpoll mic :interval "1s"
     `/home/$USER/.config/eww/scripts/mic-volume`)
+
+(defpoll temp :interval "5s"
+    `/home/$USER/.config/eww/scripts/temperature`)
+
+(defpoll workspaces :interval "1s"
+    `/home/$USER/.config/eww/scripts/workspaces`)
+
