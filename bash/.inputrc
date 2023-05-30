@@ -1,1 +1,5 @@
+$include /etc/inputrc
+
+set colored-stats On
+set colored-completion-prefix On
 set completion-ignore-case On
