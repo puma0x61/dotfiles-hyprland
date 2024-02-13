@@ -1,4 +1,2 @@
 (defvar home_dir "/home/$USER/.config/eww/scripts")
-(defvar sep "--")
-; (defvar mem "Mem: ${round(((EWW_RAM.used_mem) / 1048576), 0)}/${round(((EWW_RAM.total_mem) / 1048576), 0)}")
-; (defvar cpu "CPU: ${round(EWW_CPU.avg, 0)}%")
+(defvar sep "╎")

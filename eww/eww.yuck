@@ -15,7 +15,7 @@
     (button
         :class "main_theme"
         :halign "start"
-        "${brightness} ${sep} ${volume} ${sep} ${mic} ${sep} ${workspaces} ${sep} ${round(((EWW_RAM.used_mem) / 1048576), 0)}/${round(((EWW_RAM.total_mem) / 1048576), 0)}"
+        "${brightness} ${sep} ${volume} ${sep} ${mic} ${sep} ${workspaces} ${sep} ${round(((EWW_RAM.used_mem) / 1048576), 0)}/${round(((EWW_RAM.total_mem) / 1048576), 0)}:${round((EWW_RAM.used_mem_perc),0)}"
     )
   
     (button 
@@ -27,7 +27,7 @@
     (button
         :class "main_theme"
         :halign "end"
-        "${round(EWW_CPU.avg, 0)}% ${sep} ${temp}K ${sep} ${eth} ${sep} ${wifi} ${sep} Battery: ${battery}"
+        "${round(EWW_CPU.avg, 0)}% ${sep} ${temp}K ${sep} ${wifi} ${sep} Battery: ${battery}"
     )
   )
 )

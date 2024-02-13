@@ -1,5 +1,10 @@
 #!/bin/bash
 
-status="$(cat "/sys/class/net/wlp3s0/operstate")"
+# status="$(cat "/sys/class/net/wlp3s0/operstate")"
 
-echo "WiFi: $status" && exit
+# echo "WiFi: $status" && exit
+
+network=$(iwctl station wlan0 show | grep network | sed 's/.*network\ \ \ \ //' | sed 's/  //g')
+
+echo "WiFi: $network"
+exit

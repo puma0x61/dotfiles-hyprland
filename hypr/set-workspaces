@@ -1,0 +1,8 @@
+#!/bin/bash
+
+hyprctl keyword windowrule = "workspace 1 silent, Alacritty"
+hyprctl keyword windowrule = "workspace 2 silent, Vivaldi"
+hyprctl keyword windowrule = "workspace 3 silent, telegram"
+
+sleep 3
+
